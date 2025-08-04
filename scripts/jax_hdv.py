@@ -57,16 +57,16 @@ class BipolarHDV(HDV):
 class ComplexHDV(HDV):
     pass
 
-def random(n_vecs, hdv_len, hdv_class):
-    if hdv_class == HDVClass.BINARY:
-        return jrnd.bernoulli(key, shape=(n_vecs, hdv_len))
-    elif hdv_class == HDVClass.BIPOLAR:
-        return 1 - 2*jnp.astype(jrnd.bernoulli(key, shape=(n_vecs, hdv_len)), jnp.int)
-    elif hdv_class == HDVClass.COMPLEX:
-        return jax.lax.exp(2*jnp.pi*jrnd.uniform(key, shape=(n_vecs, hdv_len)))
-    else:
-        print("ERROR: UKNOWN HDV_CLASS TYPE '{}'. MUST BE ONE OF {}".format(hdv_class, list(HDVClass)))
-        return None
+#def random(n_vecs, hdv_len, hdv_class):
+#    if hdv_class == HDVClass.BINARY:
+#        return jrnd.bernoulli(key, shape=(n_vecs, hdv_len))
+#    elif hdv_class == HDVClass.BIPOLAR:
+#        return 1 - 2*jnp.astype(jrnd.bernoulli(key, shape=(n_vecs, hdv_len)), jnp.int)
+#    elif hdv_class == HDVClass.COMPLEX:
+#        return jax.lax.exp(2*jnp.pi*jrnd.uniform(key, shape=(n_vecs, hdv_len)))
+#    else:
+#        print("ERROR: UKNOWN HDV_CLASS TYPE '{}'. MUST BE ONE OF {}".format(hdv_class, list(HDVClass)))
+#        return None
 
 
 # Bundle is roughly a join
@@ -130,20 +130,20 @@ def similarity(hdv_a, hdv_b):
 
 
 
-random_binary = HDV.random(3, 15, HDVClass.BINARY)
-random_bipolar = HDV.random(3, 15, HDVClass.BIPOLAR)
-random_complex = HDV.random(3, 15, HDVClass.COMPLEX)
-
-print("Random binary", random_binary)
-print("Random bipolar", random_bipolar)
-print("Random complex", random_complex)
-
-
-hdv_a = random_binary[0]
-hdv_b = random_binary[1]
-hdv_c = random_complex[0]
-
-bundle(hdv_a, hdv_b)
-bundle(hdv_a, hdv_c)
-
+#random_binary = HDV.random(3, 15, HDVClass.BINARY)
+#random_bipolar = HDV.random(3, 15, HDVClass.BIPOLAR)
+#random_complex = HDV.random(3, 15, HDVClass.COMPLEX)
+#
+#print("Random binary", random_binary)
+#print("Random bipolar", random_bipolar)
+#print("Random complex", random_complex)
+#
+#
+#hdv_a = random_binary[0]
+#hdv_b = random_binary[1]
+#hdv_c = random_complex[0]
+#
+#bundle(hdv_a, hdv_b)
+#bundle(hdv_a, hdv_c)
+#
 
