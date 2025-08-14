@@ -1,7 +1,13 @@
 # hypercube platform for tesseract
 - progress:
+  - binary and complex hdvs; need real (representing topological vector space)
   - implementing simplicial complex as container for CHS
   - composition of ASC must match composition of PHS
+
+- todo:
+  - dynamic approach to signature construction
+    - each new blanket state must provide information on sequence
+    - bottom up approach to higher order effects --> dynamic stopping
 
 - goals:
   - model, data, and measure compositionality
