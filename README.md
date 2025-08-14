@@ -8,6 +8,7 @@
   - dynamic approach to signature construction
     - each new blanket state must provide information on sequence
     - bottom up approach to higher order effects --> dynamic stopping
+  - random sampling in hdv classes needs to cycle prng key
 
 - goals:
   - model, data, and measure compositionality
